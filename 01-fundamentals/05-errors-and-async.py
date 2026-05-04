@@ -1,3 +1,6 @@
+import asyncio
+import time
+
 # try/except — Python's try/catch
 try:
     10 / 0
@@ -41,8 +44,6 @@ except ValueError as err:
 
 print("--------")
 # async function
-import asyncio
-
 async def fetch_user(user_id: int) -> dict:
     await asyncio.sleep(1)
     return {
@@ -55,8 +56,6 @@ print(result)
 
 print("--------")
 # Multiple async operations in parallel
-import time
-
 async def main():
     user1, user2, user3 = await asyncio.gather(fetch_user(1), fetch_user(2), fetch_user(3))
     print(user1, user2, user3)
